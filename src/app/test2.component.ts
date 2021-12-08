@@ -13,6 +13,25 @@ interface Questions {
 
 @Component({
   selector: 'test2',
+  styles: [
+    ` 
+  .wrong
+  {
+     font-size:8pt;
+     color: red;
+  }
+  .correct
+  {
+     font-size:8pt;
+     color: green;
+  }
+  .nomarks
+  {
+     font-size:8pt;
+     color: purple;
+  }
+  `,
+  ],
   template: `
   <div *ngFor="let question of questions">
       <div class="card mt-2 mb-2">
