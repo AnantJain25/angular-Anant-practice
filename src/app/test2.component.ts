@@ -39,9 +39,15 @@ interface Questions {
        
         <div class="card-body" *ngFor="let option of question.options">
           <label>
-              <input type="checkbox" [(ngModel)]="option.isChecked"/>   
+              <input type="checkbox" [(ngModel)]="option.isChecked" [disabled]="isTestOver"/>   
               {{option.text}}
           </label>
+          <span *ngIf="option.isChecked && option.isCorrect && isTestOver" class="correct">
+          Correct: +{{option.marks}}
+          </span>
+          <span *ngIf="option.isChecked && !option.isCorrect && isTestOver" class="wrong">
+          Wrong: -{{option.marks}}
+          </span>
         </div>       
       </div>
   </div>
